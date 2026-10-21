@@ -2,11 +2,57 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>AI 비서</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 학습 비서</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>AI 비서 프론트엔드 배포 성공!</h1>
-    <div id="response">백엔드 연결 대기 중...</div>
-    <script src="script.js"></script>
+    <div class="container">
+        <!-- 왼쪽: 데이터 관리 및 요약 -->
+        <aside class="sidebar">
+            <section class="summary-card">
+                <h2>📊 데이터 요약</h2>
+                <div id="summary-content">로딩 중...</div>
+            </section>
+
+            <section class="data-management">
+                <h2>📅 데이터 추가</h2>
+                <form id="data-form">
+                    <input type="date" id="date-input" required>
+                    <input type="number" id="value-input" placeholder="학습 시간(시간)" step="0.1" required>
+                    <input type="text" id="memo-input" placeholder="메모">
+                    <button type="submit">추가하기</button>
+                </form>
+                <div class="data-list-container">
+                    <h3>최근 기록</h3>
+                    <ul id="data-list"></ul>
+                </div>
+            </section>
+        </aside>
+
+        <!-- 오른쪽: 채팅 인터페이스 -->
+        <main class="chat-container">
+            <header>
+                <h2>🤖 AI 비서와 대화</h2>
+                <button id="new-chat-btn">새 대화</button>
+            </header>
+            <div id="chat-window" class="chat-window">
+                <!-- 메시지가 여기에 표시됨 -->
+            </div>
+            <div id="loading" class="hidden">AI가 생각 중입니다...</div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="데이터에 대해 물어보세요!">
+                <button id="send-btn">전송</button>
+            </div>
+        </main>
+
+        <!-- 대화 기록 사이드바 -->
+        <aside class="history-sidebar">
+            <h2>📜 이전 대화</h2>
+            <ul id="history-list"></ul>
+        </aside>
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

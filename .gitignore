@@ -4,3 +4,4 @@ backend/venv
 backend/__pycache__
 # *.pyc
 .vscode/settings.json
+backend/scripts/seed_data.py
