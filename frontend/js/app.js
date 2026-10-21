@@ -4,7 +4,10 @@
 
 // 1. API 설정 (로컬 테스트용)
 // 배포 후에는 'https://your-backend-url.onrender.com/api'로 변경하세요.
-const API_URL = "http://localhost:8000/api";
+const API_URL =
+  location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? "http://localhost:8000/api"
+    : "https://vercel-html-render.onrender.com/api";
 
 // 2. 초기화 및 이벤트 리스너 등록
 document.addEventListener('DOMContentLoaded', () => {
